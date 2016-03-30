@@ -2,6 +2,7 @@
 
 [RoleSettings]
 PolicyOmitList[]=itclassmanager/classlist
+PolicyOmitList[]=itclassmanager/classdiff
 
 [TemplateSettings]
 ExtensionAutoloadPath[]=itclassmanager
