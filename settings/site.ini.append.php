@@ -3,6 +3,8 @@
 [RoleSettings]
 PolicyOmitList[]=itclassmanager/classlist
 PolicyOmitList[]=itclassmanager/classdiff
+PolicyOmitList[]=itclassmanager/class
+PolicyOmitList[]=itclassmanager/openpa_class
 
 [TemplateSettings]
 ExtensionAutoloadPath[]=itclassmanager

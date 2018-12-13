@@ -8,25 +8,28 @@
 class ITClassManager {
     
     private $local_classes = NULL;
-    
+
     /**
      * Ritorna l'elenco delle classi di contenuto del sito attuale
      * 
      * @return array
      */
-    public static function fetchClassList() {
+    public static function fetchClassList()
+    {
         $result = eZFunctionHandler::execute( 'class', 'list', '' );
         
         return $result;
     }
-    
+
     /**
      * Funzione usata dall'operatore di template per caricare l'elenco
      * delle classi remote
-     * 
+     *
      * @return array
+     * @throws Exception
      */
-    public static function fetchRemoteClassList(){
+    public static function fetchRemoteClassList()
+    {
         $result = array();
         
         // Indirizzo sito remoto

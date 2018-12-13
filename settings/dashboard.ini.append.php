@@ -2,7 +2,7 @@
 
 [DashboardBlock_classes]
 Priority=10
-PolicyList=itclassmanager/classdiff
+PolicyList[]=itclassmanager/classdiff
 
  */ ?>
 

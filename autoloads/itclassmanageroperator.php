@@ -14,8 +14,10 @@ class ITClassManagerOperator{
      * 
      * @param string $name
      */
-    public function __construct( $name = 'classes' ){
-        $this->Operators = array( $name );
+    public function __construct( ){
+        $this->Operators = array(
+            'classes',
+            'class_by_identifier',);
     }
     
     /**
@@ -42,10 +44,19 @@ class ITClassManagerOperator{
      * @return type
      */
     public function namedParameterList(){
-        return array( 'classes' => array( 'result_type' => array( 'type' => 'string',
-                                                                  'required' => true,
-                                                                  'default' => 'remote_list' ))
-                      );
+        return array(
+            'classes' => array(
+                'result_type' => array(
+                    'type' => 'string',
+                    'required' => true,
+                    'default' => 'remote_list' )
+            ),
+            'class_by_identifier' => array(
+                'identifier' => array(
+                    'type'     => 'string',
+                    'required' => true )
+            )
+        );
     }
 
     /**
@@ -60,11 +71,24 @@ class ITClassManagerOperator{
      * @param type $namedParameters
      */
     public function modify( $tpl, $operatorName, $operatorParameters,  $rootNamespace, $currentNamespace, &$operatorValue, $namedParameters  ){
-        
-        $result_type = $namedParameters['result_type'];
-        if( $result_type == 'remote_list' ){
-            $operatorValue = ITClassManager::fetchRemoteClassList();
+
+        switch ( $operatorName )
+        {
+            case 'classes':
+                {
+                    $operatorValue = ITClassManager::fetchRemoteClassList();
+                    break;
+                }
+            case 'class_by_identifier':
+                {
+                    $identifier = $namedParameters['identifier'];
+                    $operatorValue = eZContentClass::fetchByIdentifier( $identifier );
+
+                    break;
+                }
+
         }
+
     }
     
 }

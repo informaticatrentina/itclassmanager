@@ -1,12 +1,12 @@
 {
     "name": "informaticatrentina/itclassmanager",
-    "version": "1.2",
-    "description": "Informatica Trentina - ITClassManager",
+    "version": "1.3",
+    "description": "Trentino Digitale - ITClassManager",
     "type": "ezpublish-legacy-extension",
     "authors": [        
         {
-            "name": "Informatica Trentina SpA",
-            "homepage": "http://www.infotn.it"
+            "name": "Trentino Digitale SpA",
+            "homepage": "http://www.trentinodigitale.it"
         }
     ],
     "license": "GPL-2.0",    
